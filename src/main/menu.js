@@ -22,6 +22,7 @@ var mainMenuTemplate = [
             },
             {
                 label: '保存',
+                accelerator: 'Ctrl+S',
                 click: function () {
                     mainWindow.webContents.send('action', 'save')
                 }
@@ -37,6 +38,7 @@ var mainMenuTemplate = [
             },
             {
                 label: '退出',
+                accelerator: 'Alt+F4',
                 click: function () {
                     mainWindow.webContents.send('action', 'exit')
                 }
@@ -90,6 +92,13 @@ var mainMenuTemplate = [
         label: '视图',
         submenu: [
             {
+                label: '重新加载',
+                role: 'reload'
+            },
+            {
+                type: 'separator'
+            },
+            {
                 label: '放大',
                 role: 'zoomOut'
             },
@@ -114,8 +123,11 @@ var mainMenuTemplate = [
         label: '帮助',
         submenu: [
             {
-                label: '关于',
+                label: '项目GitHub',
                 click() { shell.openExternal('https://github.com/AngleOldPig/oldpignotepad'); }
+            },
+            {
+                label: '关于'
             }
         ]
     }
@@ -169,6 +181,6 @@ const rightClickMenuTemplate = [
 var rightClickMenuBuilder = Menu.buildFromTemplate(rightClickMenuTemplate);
 
 // 监听右键事件
-ipcMain.on('rightClickMenu', function(){
+ipcMain.on('rightClickMenu', function () {
     rightClickMenuBuilder.popup(BrowserWindow.getFocusedWindow())
 })
