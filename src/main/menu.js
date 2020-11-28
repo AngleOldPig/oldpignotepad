@@ -11,20 +11,20 @@ var mainMenuTemplate = [
             {
                 label: '新建',
                 click: function () {
-                    mainWindow.webContents.send('action', 'new')
+                    mainWindow.webContents.send('action', 'new');
                 }
             },
             {
                 label: '打开',
                 click: function () {
-                    mainWindow.webContents.send('action', 'open')
+                    mainWindow.webContents.send('action', 'open');
                 }
             },
             {
                 label: '保存',
                 accelerator: 'Ctrl+S',
                 click: function () {
-                    mainWindow.webContents.send('action', 'save')
+                    mainWindow.webContents.send('action', 'save');
                 }
             },
             {
@@ -33,14 +33,14 @@ var mainMenuTemplate = [
             {
                 label: '打印',
                 click: function () {
-                    mainWindow.webContents.send('action', 'print')
+                    mainWindow.webContents.send('action', 'print');
                 }
             },
             {
                 label: '退出',
                 accelerator: 'Alt+F4',
                 click: function () {
-                    mainWindow.webContents.send('action', 'exit')
+                    mainWindow.webContents.send('action', 'exit');
                 }
             }
         ]
